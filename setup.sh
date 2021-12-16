@@ -6,20 +6,20 @@ chmod +x ~/.local/bin/nvim.appimage
 cp ~/Downloads/rust-analyzer ~/.local/bin/rust-analyzer
 chmod +x ~/.local/bin/rust-analyzer
 
-sudo apt install git
-sudo apt install python-is-python3
-sudo apt install python3-pip
-sudo apt install xclip
-sudo apt install tmux
-sudo apt install guake
-sudo apt install bat
+sudo apt install -y git
+sudo apt install -y python-is-python3
+sudo apt install -y python3-pip
+sudo apt install -y xclip
+sudo apt install -y tmux
+sudo apt install -y guake
+sudo apt install -y bat
 ln -s /usr/bin/batcat ~/.local/bin/bat
-sudo apt install silversearcher-ag
-sudo apt install nodejs
-sudo apt install npm
+sudo apt install -y silversearcher-ag
+sudo apt install -y nodejs
+sudo apt install -y npm
 sudo snap install beekeeper-studio
 sudo snap install insomnia
-sudo apt install zsh
+sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 #install docker
