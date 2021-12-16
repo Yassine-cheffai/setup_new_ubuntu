@@ -140,7 +140,7 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \ 'python': ['black'],
 \ 'rust': ['rustfmt'],
-\ 'javascript': ['eslint'],
+\ 'javascript': ['eslint', 'prettier'],
 \ 'typescript': ['tslint'],
 \ 'typescriptreact': ['prettier', 'eslint']
 \}
