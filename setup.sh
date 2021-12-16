@@ -16,6 +16,8 @@ sudo apt install nodejs
 sudo apt install npm
 sudo snap install beekeeper-studio
 sudo snap install insomnia
+sudo apt install zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 #install docker
 sudo snap install docker
