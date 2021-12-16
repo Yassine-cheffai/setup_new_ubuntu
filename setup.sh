@@ -38,7 +38,7 @@ cp .tmux.conf ~/.tmux.conf
 
 pip install flake8
 pip install black
-npm install -g create-react-app
+sudo npm install -g create-react-app
 
 #install docker
 sudo snap install docker
