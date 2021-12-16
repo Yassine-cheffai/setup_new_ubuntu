@@ -20,7 +20,7 @@ sudo apt install -y npm
 sudo snap install beekeeper-studio
 sudo snap install insomnia
 sudo apt install -y zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo apt install -y curl
 
 #install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -45,3 +45,4 @@ sudo snap install docker
 sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
