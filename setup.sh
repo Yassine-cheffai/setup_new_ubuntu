@@ -22,12 +22,6 @@ sudo snap install insomnia
 sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-#install docker
-sudo snap install docker
-sudo groupadd docker
-sudo usermod -aG docker $USER
-newgrp docker
-
 #install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
@@ -45,3 +39,9 @@ cp .tmux.conf ~/.tmux.conf
 pip install flake8
 pip install black
 npm install -g create-react-app
+
+#install docker
+sudo snap install docker
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
