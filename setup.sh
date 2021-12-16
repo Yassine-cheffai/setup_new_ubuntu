@@ -1,7 +1,9 @@
 #download nvim.appimage and rust-analyzer
 #add this to .zshrc  alias nvim="nvim.appimage"
 cp ~/Downloads/nvim.appimage ~/.local/bin/nvim.appimage
+chmod +x ~/.local/bin/nvim.appimage
 cp ~/Downloads/rust-analyzer ~/.local/bin/rust-analyzer
+chmod +x ~/.local/bin/rust-analyzer
 
 sudo apt install git
 sudo apt install python-is-python3
