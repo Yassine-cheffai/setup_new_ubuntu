@@ -14,14 +14,25 @@ ln -s /usr/bin/batcat ~/.local/bin/bat
 sudo apt install silversearcher-ag
 sudo apt install nodejs
 sudo apt install npm
+sudo snap install beekeeper-studio
+sudo snap install insomnia
+
+#install docker
+sudo snap install docker
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+
+#install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # install vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 
 #setup neovim
-mkdir ~/.conf/nvim
-cp init.vim ~/.conf/nvim.init.vim
+mkdir ~/.config/nvim
+cp init.vim ~/.config/nvim.init.vim
 
 # setup tmux
 cp .tmux.conf ~/.tmux.conf
