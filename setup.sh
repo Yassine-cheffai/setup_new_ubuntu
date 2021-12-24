@@ -1,5 +1,7 @@
 #download nvim.appimage and rust-analyzer
 #add this to .zshrc  alias nvim="nvim.appimage"
+
+sudo apt update
 mkdir ~/.local/bin
 cp ~/Downloads/nvim.appimage ~/.local/bin/nvim.appimage
 chmod +x ~/.local/bin/nvim.appimage
