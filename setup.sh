@@ -13,6 +13,7 @@ git config --global user.email "yacincheffai@yahoo.com"
 git config --global user.name "Yassine-cheffai"
 sudo apt install -y python-is-python3
 sudo apt install -y python3-pip
+sudo apt install y python3.9-venv
 sudo apt install -y xclip
 sudo apt install -y tmux
 sudo apt install -y guake
@@ -25,7 +26,7 @@ sudo snap install beekeeper-studio
 sudo snap install insomnia
 sudo apt install -y zsh
 sudo apt install -y curl
-sudo apt install universal-ctags
+sudo apt install -y universal-ctags
 
 #install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
