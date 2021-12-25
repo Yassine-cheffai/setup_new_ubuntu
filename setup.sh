@@ -25,6 +25,7 @@ sudo snap install beekeeper-studio
 sudo snap install insomnia
 sudo apt install -y zsh
 sudo apt install -y curl
+sudo apt install universal-ctags
 
 #install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
