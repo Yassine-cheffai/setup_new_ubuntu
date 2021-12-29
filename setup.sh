@@ -37,7 +37,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 #setup neovim
 mkdir ~/.config/nvim
-cp init.vim ~/.config/nvim.init.vim
+cp init.vim ~/.config/nvim/init.vim
 
 # setup tmux
 cp .tmux.conf ~/.tmux.conf
