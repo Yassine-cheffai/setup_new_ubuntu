@@ -13,7 +13,7 @@ git config --global user.email "yacincheffai@yahoo.com"
 git config --global user.name "Yassine-cheffai"
 sudo apt install -y python-is-python3
 sudo apt install -y python3-pip
-sudo apt install y python3.9-venv
+sudo apt install -y python3.9-venv
 sudo apt install -y xclip
 sudo apt install -y tmux
 sudo apt install -y guake
