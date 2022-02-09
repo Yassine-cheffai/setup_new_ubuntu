@@ -32,16 +32,9 @@ Plugin 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plugin 'ryanoasis/vim-devicons'
 "Plugin 'majutsushi/tagbar'
 Plugin 'liuchengxu/vista.vim'
-Plugin 'drewtempelmeyer/palenight.vim'
+Plugin 'ellisonleao/glow.nvim'
+Plugin 'Pocco81/AutoSave.nvim'
 
-"Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-" in your plugin list (assuming you use vim-plug):
-"Plugin 'jmcantrell/vim-virtualenv'
-
-" in your plugin constants configuration section
-"let g:virtualenv_auto_activate = 1
-
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 filetype plugin on
@@ -71,7 +64,7 @@ colorscheme onedark
 set timeoutlen=1000 ttimeoutlen=0
 "nerdtree settings
 "ctrl + t will not work in a go file because it became go back from a go to definition
-nnoremap <C-t> :NERDTreeToggle<CR>
+"nnoremap <C-t> :NERDTreeToggle<CR>
 "nnoremap <C-f> :NERDTreeFind<CR>  not working any more because i changed it
 "to search
 let NERDTreeMinimalUI = 1
@@ -92,7 +85,7 @@ set laststatus=2
 "let g:syntastic_python_checkers = ['flake8']
 
 " autosave
-autocmd CursorHold,CursorHoldI * update
+"autocmd CursorHold,CursorHoldI * update
 
 
 
@@ -105,14 +98,17 @@ let mapleader=" "
 "let g:jedi#show_call_signatures = 0
 " use ctrl p to lanch FZF using gitignore, use Files to show all files
 nmap <C-P> :GFiles<CR>
-nmap <C-F> :Ag<CR>
+"nmap <C-F> :Ag<CR>
 :nnoremap <Leader>s :Ag <Enter>
 :nnoremap <Leader>f :Files <Enter>
+:nnoremap <Leader>w :Windows <Enter>
 "set up FZF Ag
 command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--color-path="0;33"', <bang>0)
 set updatetime=100
+let g:fzf_preview_window = []
 
-
+"nmap <C-P> :Telescope find_files<CR>
+":nnoremap <Leader>s :Telescope grep_string<Enter>
 
 " go setting
 let g:go_highlight_types = 1
@@ -131,7 +127,10 @@ let g:go_auto_sameids = 0
 "let g:rustfmt_autosave = 1
 
 "npm install --save typescript
-let g:ale_linters = {'rust': ['analyzer'], 'typescriptreact': ['deno', 'eslint', 'standard', 'tslint', 'tsserver', 'typecheck', 'xo'], 'python': ['flake8', 'jedils']}
+" pip install jedi-language-server
+" pip install pyright
+"let g:ale_linters = {'rust': ['analyzer'], 'typescriptreact': ['deno', 'eslint', 'standard', 'tslint', 'tsserver', 'typecheck', 'xo'], 'python': ['flake8', 'jedils', 'pyright']}
+let g:ale_linters = {'rust': ['analyzer'], 'typescriptreact': ['deno', 'eslint', 'standard', 'tslint', 'tsserver', 'typecheck', 'xo'], 'python': [ 'jedils', 'pyright']}
 "let g:ale_linters_explicit = 1
 "let g:ale_python_auto_pipenv = 1
 let g:ale_virtualenv_dir_names = ['env', 'venv']
@@ -161,3 +160,34 @@ let g:ale_virtualtext_cursor = 1
 "let g:ale_set_balloons = 1
 set cursorline  
 let g:ale_lint_on_text_changed ='always' 
+
+
+
+let g:ale_sign_error = '->'
+let g:ale_sign_style_error = '->'
+
+:nnoremap <Leader>e :NERDTreeToggle <Enter>
+
+
+
+lua << EOF
+local autosave = require("autosave")
+
+autosave.setup(
+    {
+        enabled = true,
+        execution_message = "AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"),
+        events = {"InsertLeave", "TextChanged"},
+        conditions = {
+            exists = true,
+            filename_is_not = {},
+            filetype_is_not = {},
+            modifiable = true
+        },
+        write_all_buffers = false,
+        on_off_commands = true,
+        clean_command_line_interval = 0,
+        debounce_delay = 135
+    }
+)
+EOF
