@@ -1,0 +1,14 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "python",
+    "yaml",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json"
+  ],
+  "suggest.autoTrigger": "none",
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "black"
+}
